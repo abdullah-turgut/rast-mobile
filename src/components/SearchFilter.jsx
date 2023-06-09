@@ -6,7 +6,10 @@ export default function SearchInput() {
     <div className="search-bar">
       <input type="text" id="search-input" placeholder="Search objects..." />
       <button className="search-btn">
-        <RiSearchLine size={16} />
+        <RiSearchLine size={20} />
+      </button>
+      <button className="filter-btn">
+        <HiFilter size={20} />
       </button>
     </div>
   );

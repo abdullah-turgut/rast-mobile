@@ -1,6 +1,6 @@
 //Components
 import Navbar from './components/Navbar';
-import SearchInput from './components/SearchInput';
+import SearchFilter from './components/SearchFilter';
 import NewEntry from './components/NewEntry';
 import DataGrid from './components/DataGrid';
 
@@ -12,7 +12,7 @@ function App() {
       </header>
       <main>
         <div className="search-add">
-          <SearchInput />
+          <SearchFilter />
           <NewEntry />
         </div>
         <DataGrid />
