@@ -22,7 +22,20 @@ export default function Navbar() {
       </ul>
 
       {/* Social Links */}
-      <ul className="nav-social"></ul>
+      <ul className="nav-social">
+        <li>
+          <a href="">Youtube</a>
+        </li>
+        <li>
+          <a href="">Instagram</a>
+        </li>
+        <li>
+          <a href="">Behance</a>
+        </li>
+        <li>
+          <a href="">Linked.in</a>
+        </li>
+      </ul>
     </nav>
   );
 }
