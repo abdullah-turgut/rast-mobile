@@ -104,6 +104,15 @@ a:visited {
   line-height: 2rem;
 }
 
+.close-menu {
+  /*display*/
+  display: block;
+
+  /*style*/
+  color: #744bfc;
+  cursor: pointer;
+}
+
 .nav-route-links {
   /*display*/
   display: flex;
@@ -114,6 +123,10 @@ a:visited {
   font-size: 1.8rem;
   font-weight: 500;
   text-align: right;
+}
+
+.nav-route-links a:hover {
+  text-decoration: underline;
 }
 
 .nav-social-links {
@@ -136,10 +149,6 @@ a:visited {
 }
 
 /* MEDIA QUERIES */
-
-/* tablets */
-@media screen and (min-width: 768px) {
-}
 
 /* laptops/desktops */
 @media screen and (min-width: 1024px) {

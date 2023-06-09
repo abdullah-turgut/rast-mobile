@@ -20,7 +20,7 @@ export default function Navbar() {
       <HiMenuAlt4 size={40} className="burger-menu" />
       {/* Router Links */}
       <div className="nav-links">
-        <IoMdClose size={30} />
+        <IoMdClose size={30} className="close-menu" />
         <ul className="nav-route-links">
           <li>
             <a href="/hakkimizda">Hakkımızda</a>
