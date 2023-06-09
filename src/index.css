@@ -64,6 +64,8 @@ a:visited {
 }
 
 .navbar-overlay {
+  display: none;
+
   /*position*/
   position: fixed;
   top: 0;
@@ -81,7 +83,7 @@ a:visited {
   /*position*/
   position: fixed;
   top: 0;
-  right: 0;
+  right: -100%;
 
   /*display*/
   display: flex;
@@ -102,6 +104,11 @@ a:visited {
   font-weight: 400;
   font-size: 1.4rem;
   line-height: 2rem;
+
+  /*transition*/
+  transition: all;
+  transition-duration: 400ms;
+  transition-timing-function: ease-in;
 }
 
 .close-menu {
@@ -123,10 +130,6 @@ a:visited {
   font-size: 1.8rem;
   font-weight: 500;
   text-align: right;
-}
-
-.nav-route-links a:hover {
-  text-decoration: underline;
 }
 
 .nav-social-links {
@@ -152,4 +155,50 @@ a:visited {
 
 /* laptops/desktops */
 @media screen and (min-width: 1024px) {
+  .navbar {
+    padding: 3rem 6%;
+  }
+
+  .burger-menu {
+    display: none;
+  }
+
+  .close-menu {
+    display: none;
+  }
+
+  .navbar-overlay {
+    position: static;
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  .nav-links {
+    /*position*/
+    position: static;
+
+    /*display*/
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+
+    /*box-model*/
+    width: auto;
+    height: auto;
+    padding: 0;
+  }
+
+  .nav-route-links {
+    /*display*/
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: space-evenly;
+
+    /*box-model*/
+
+    /*typography*/
+    font-size: 1.4rem;
+  }
 }

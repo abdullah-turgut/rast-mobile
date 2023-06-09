@@ -1,3 +1,6 @@
+//Hooks
+import { useState } from 'react';
+
 //Brand-Logo
 import logo from '../assets/logo.png';
 
@@ -8,6 +11,20 @@ import { IoMdClose } from 'react-icons/io';
 //Social-Icons
 import { BsYoutube, BsInstagram, BsBehance, BsLinkedin } from 'react-icons/bs';
 export default function Navbar() {
+  const [toggle, setToggle] = useState(false);
+
+  //Function to toggle menu on mobile scale
+  function toggleMenu() {
+    if (!toggle) {
+      document.getElementById('nav-link').style.right = '0';
+      document.getElementById('nav-overlay').style.display = 'block';
+    } else {
+      document.getElementById('nav-link').style.right = '-100%';
+      document.getElementById('nav-overlay').style.display = 'none';
+    }
+    setToggle(!toggle);
+  }
+
   return (
     <nav className="navbar">
       <a href="/">
@@ -15,12 +32,12 @@ export default function Navbar() {
       </a>
 
       {/* When menu toggled on overlay on the left side */}
-      <div className="navbar-overlay"></div>
+      <div className="navbar-overlay" id="nav-overlay"></div>
 
-      <HiMenuAlt4 size={40} className="burger-menu" />
+      <HiMenuAlt4 size={40} className="burger-menu" onClick={toggleMenu} />
       {/* Router Links */}
-      <div className="nav-links">
-        <IoMdClose size={30} className="close-menu" />
+      <div className="nav-links" id="nav-link">
+        <IoMdClose size={30} className="close-menu" onClick={toggleMenu} />
         <ul className="nav-route-links">
           <li>
             <a href="/hakkimizda">Hakkımızda</a>
