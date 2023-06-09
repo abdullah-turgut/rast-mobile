@@ -45,6 +45,7 @@ a:visited {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 10;
 
   /*display*/
   display: flex;
@@ -181,6 +182,69 @@ main {
   );
 }
 
+/* DATA GRID */
+
+.search-add {
+  /*display*/
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.search-bar {
+  /*position*/
+  position: relative;
+
+  /*display*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /*box-model*/
+  min-width: 38rem;
+}
+
+#search-input {
+  /*box-model*/
+  width: 100%;
+  height: 4rem;
+  padding: 1rem 3rem;
+  border-radius: 4rem;
+  border: none;
+  outline: none;
+
+  /*typography*/
+  font-size: 1.4rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  color: #8c8c8c;
+}
+
+.search-btn {
+  /*position*/
+  position: absolute;
+  right: 0;
+
+  /*display*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /*box-model*/
+  height: 100%;
+  width: 4.5rem;
+  border: none;
+  border-radius: 0 4rem 4rem 0;
+
+  /*style*/
+  cursor: pointer;
+  background-color: #744bfc;
+  color: #fff;
+}
+
+.add-btn {
+  min-width: 17.5rem;
+}
+
 /* MEDIA QUERIES */
 
 /* laptops/desktops */
@@ -232,5 +296,10 @@ main {
 
     /*typography*/
     font-size: 1.4rem;
+  }
+
+  .search-add {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
