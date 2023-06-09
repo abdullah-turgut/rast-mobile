@@ -172,6 +172,7 @@ main {
   /*display*/
   display: flex;
   flex-direction: column;
+  row-gap: 1rem;
 
   /*box-model*/
   min-height: calc(100vh - 10rem);
