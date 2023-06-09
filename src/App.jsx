@@ -1,5 +1,6 @@
 //Components
 import Navbar from './components/Navbar';
+import Content from './components/Content';
 
 function App() {
   return (
@@ -7,6 +8,9 @@ function App() {
       <header>
         <Navbar />
       </header>
+      <main>
+        <Content />
+      </main>
     </>
   );
 }

@@ -17,6 +17,13 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  /*box-model*/
+  padding: 10rem 2% 3rem 2%;
+  width: 100vw;
+  height: 100vh;
+}
+
 ul {
   list-style: none;
 }
@@ -32,7 +39,7 @@ a:visited {
   color: black;
 }
 
-/* Main Navigation */
+/* NAVIGATION */
 .navbar {
   /*position*/
   position: fixed;
@@ -47,6 +54,9 @@ a:visited {
   /*box-model*/
   width: 100%;
   padding: 1.5rem 6%;
+
+  /*background*/
+  background-color: white;
 }
 
 .logo {
@@ -108,7 +118,7 @@ a:visited {
   /*transition*/
   transition: all;
   transition-duration: 400ms;
-  transition-timing-function: ease-in;
+  transition-timing-function: ease-out;
 }
 
 .close-menu {
@@ -149,6 +159,25 @@ a:visited {
   /*styles*/
   color: #ffffff;
   background-color: #744bfc;
+}
+
+/* MAIN */
+
+main {
+  /*display*/
+  display: flex;
+  flex-direction: column;
+
+  /*box-model*/
+  min-height: calc(100vh - 10rem);
+  padding: 4.4rem 7rem;
+
+  background: linear-gradient(
+    180deg,
+    #eff2ff -30.56%,
+    rgba(232, 236, 255, 0) 135.85%
+  );
+  border-radius: 6px;
 }
 
 /* MEDIA QUERIES */
