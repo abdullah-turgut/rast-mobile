@@ -1,6 +1,6 @@
 //Components
 import Navbar from './components/Navbar';
-import Content from './components/Content';
+import DataGrid from './components/DataGrid';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
         <Navbar />
       </header>
       <main>
-        <Content />
+        <DataGrid />
       </main>
     </>
   );
