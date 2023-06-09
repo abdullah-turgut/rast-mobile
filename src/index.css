@@ -19,7 +19,7 @@ html {
 
 body {
   /*box-model*/
-  padding: 10rem 2% 3rem 2%;
+  padding: 7rem 2% 3rem 2%;
   width: 100vw;
   height: 100vh;
 }
@@ -170,20 +170,25 @@ main {
 
   /*box-model*/
   min-height: calc(100vh - 10rem);
-  padding: 4.4rem 7rem;
+  padding: 4.4rem 4% 3rem 4%;
+  border-radius: 0.6rem;
 
+  /*background*/
   background: linear-gradient(
     180deg,
     #eff2ff -30.56%,
     rgba(232, 236, 255, 0) 135.85%
   );
-  border-radius: 6px;
 }
 
 /* MEDIA QUERIES */
 
 /* laptops/desktops */
 @media screen and (min-width: 1024px) {
+  body {
+    padding-top: 10rem;
+  }
+
   .navbar {
     padding: 3rem 6%;
   }
