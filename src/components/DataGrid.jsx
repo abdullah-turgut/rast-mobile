@@ -40,6 +40,7 @@ const Example = () => {
       {
         accessorKey: 'description', //normal accessorKey
         header: 'Açıklama',
+        enableSorting: false,
       },
     ],
     []
@@ -53,12 +54,40 @@ const Example = () => {
       enableColumnFilters={false}
       enablePagination={true}
       enableSorting={true}
+      initialState={{ sorting: [{ id: 'link', asc: true }] }}
       enableBottomToolbar={false}
       enableTopToolbar={false}
+      muiTableBodyRowProps={{ hover: false }}
       enableStickyHeader
       muiTablePaperProps={{
         sx: {
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
           flexGrow: '1',
+          background: 'transparent',
+          border: '2px solid black',
+          borderRadius: '0.8rem',
+          boxShadow: 'none',
+        },
+      }}
+      muiTableContainerProps={{
+        sx: {
+          borderRadius: '0.8rem',
+          flexGrow: '1',
+          background: 'transparent',
+        },
+      }}
+      muiTableHeadCellProps={{
+        sx: {
+          fontFamily: 'Poppins',
+          fontSize: '1.4rem',
+          fontWeight: '500',
+          background: 'white',
+          paddingLeft: '2.5rem',
+          paddingTop: '2rem',
+          paddingBottom: '2rem',
+          borderBottom: '1px solid #c4cee5',
         },
       }}
     />
