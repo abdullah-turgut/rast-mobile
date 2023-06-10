@@ -16,6 +16,7 @@ function App() {
           <NewEntry />
         </div>
         <DataGrid />
+        <div className="deneme"></div>
       </main>
     </>
   );

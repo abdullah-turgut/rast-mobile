@@ -43,6 +43,31 @@ const data = [
     name: 'twitter',
     description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
   },
+  {
+    link: 'twitter.com/rastmobile',
+    name: 'twitter',
+    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
+  },
+  {
+    link: 'twitter.com/rastmobile',
+    name: 'twitter',
+    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
+  },
+  {
+    link: 'twitter.com/rastmobile',
+    name: 'twitter',
+    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
+  },
+  {
+    link: 'twitter.com/rastmobile',
+    name: 'twitter',
+    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
+  },
+  {
+    link: 'twitter.com/rastmobile',
+    name: 'twitter',
+    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
+  },
 ];
 
 const Example = () => {
@@ -74,7 +99,7 @@ const Example = () => {
       enableColumnFilters={false}
       enablePagination={true}
       enableSorting={true}
-      enableBottomToolbar={false}
+      enableBottomToolbar={true}
       enableTopToolbar={false}
       muiTableBodyRowProps={{ hover: false }}
       enableStickyHeader
@@ -82,10 +107,8 @@ const Example = () => {
         sx: {
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'space-between',
           flexGrow: '1',
           background: 'transparent',
-          border: '1px solid #eaeaea',
           borderRadius: '0.8rem',
           boxShadow: 'none',
         },
@@ -93,8 +116,10 @@ const Example = () => {
       muiTableContainerProps={{
         sx: {
           borderRadius: '0.8rem',
-
+          border: '1px solid #eaeaea',
           background: 'transparent',
+          minHeight: '65rem',
+          maxHeight: '65rem',
         },
       }}
       muiTableHeadCellProps={{
@@ -121,6 +146,19 @@ const Example = () => {
           fontWeight: 400,
           lineHeight: '1.5rem',
           border: 'none',
+        },
+      }}
+      muiBottomToolbarProps={{
+        sx: {
+          background: 'transparent',
+          display: 'flex',
+        },
+      }}
+      muiTablePaginationProps={{
+        showFirstButton: false,
+        showLastButton: false,
+        sx: {
+          fontSize: '2rem',
         },
       }}
     />
