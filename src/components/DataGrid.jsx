@@ -4,7 +4,9 @@ import { MaterialReactTable } from 'material-react-table';
 //nested data is ok, see accessorKeys in ColumnDef below
 const data = [
   {
-    link: 'instagram.com/mobilerast/',
+    link: (
+      <a href="https://instagram.com/mobilerast/">instagram.com/mobilerast/</a>
+    ),
     name: 'instagram',
     description: `We'll help you to finish your development project successfully.`,
   },
@@ -114,7 +116,7 @@ const Example = () => {
       enableColumnFilters={false}
       enablePagination={true}
       enableSorting={true}
-      enableBottomToolbar={true}
+      enableBottomToolbar={false}
       enableTopToolbar={false}
       muiTableBodyRowProps={{ hover: false }}
       enableStickyHeader
@@ -171,11 +173,11 @@ const Example = () => {
           display: 'flex',
         },
       }}
-      muiTablePaginationProps={{
-        rowsPerPageOptions: [9, 18],
-        showFirstButton: false,
-        showLastButton: false,
-      }}
+      // muiTablePaginationProps={{
+      //   rowsPerPageOptions: [9, 18],
+      //   showFirstButton: false,
+      //   showLastButton: false,
+      // }}
     />
   );
 };

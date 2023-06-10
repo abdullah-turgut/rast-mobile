@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import SearchFilter from './components/SearchFilter';
 import NewEntry from './components/NewEntry';
 import DataGrid from './components/DataGrid';
+import Pagination from './components/Pagination';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           <NewEntry />
         </div>
         <DataGrid />
-        <div className="deneme"></div>
+        <Pagination />
       </main>
     </>
   );
