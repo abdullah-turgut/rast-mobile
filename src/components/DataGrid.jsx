@@ -94,6 +94,15 @@ const Example = () => {
           color: 'blue',
         },
       }}
+      muiTableBodyCellProps={{
+        sx: {
+          fontFamily: 'Inter',
+          fontSize: '1.2rem',
+          fontWeight: 400,
+          lineHeight: '1.5rem',
+          border: 'none',
+        },
+      }}
     />
   );
 };
