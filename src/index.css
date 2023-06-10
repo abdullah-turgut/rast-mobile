@@ -328,7 +328,7 @@ main {
 }
 
 .MuiTableRow-root td {
-  padding: 3rem 2rem 2rem 2rem;
+  padding: 1rem 2rem;
 }
 
 .MuiTableRow-root td:nth-child(1) {
@@ -406,6 +406,6 @@ main {
   }
 
   .MuiTableRow-root td:nth-child(1) {
-    padding-left: 5rem;
+    padding: 3rem 2rem 2rem 2rem;
   }
 }
