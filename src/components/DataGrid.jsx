@@ -135,7 +135,7 @@ const Example = () => {
           border: '1px solid #eaeaea',
           background: 'transparent',
           flexGrow: '1',
-          maxHeight: '66rem',
+          maxHeight: 'calc(100vh - 31rem)',
           overflowY: 'auto',
         },
       }}
