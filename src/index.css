@@ -309,6 +309,16 @@ main {
   justify-content: space-between;
 }
 
+.MuiButtonBase-root .MuiTableSortLabel-icon {
+  color: #744bfc !important;
+  opacity: 0.4 !important;
+}
+
+.MuiButtonBase-root.Mui-active .MuiTableSortLabel-icon {
+  color: #744bfc !important;
+  opacity: 1 !important;
+}
+
 /* MEDIA QUERIES */
 
 /* laptops/desktops */

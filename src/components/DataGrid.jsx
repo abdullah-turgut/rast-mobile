@@ -54,7 +54,6 @@ const Example = () => {
       enableColumnFilters={false}
       enablePagination={true}
       enableSorting={true}
-      initialState={{ sorting: [{ id: 'link', asc: true }] }}
       enableBottomToolbar={false}
       enableTopToolbar={false}
       muiTableBodyRowProps={{ hover: false }}
@@ -88,6 +87,11 @@ const Example = () => {
           paddingTop: '2rem',
           paddingBottom: '2rem',
           borderBottom: '1px solid #c4cee5',
+        },
+      }}
+      muiTableHeadProps={{
+        sx: {
+          color: 'blue',
         },
       }}
     />
