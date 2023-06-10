@@ -23,6 +23,26 @@ const data = [
     name: 'twitter',
     description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
   },
+  {
+    link: 'twitter.com/rastmobile',
+    name: 'twitter',
+    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
+  },
+  {
+    link: 'twitter.com/rastmobile',
+    name: 'twitter',
+    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
+  },
+  {
+    link: 'twitter.com/rastmobile',
+    name: 'twitter',
+    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
+  },
+  {
+    link: 'twitter.com/rastmobile',
+    name: 'twitter',
+    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
+  },
 ];
 
 const Example = () => {
@@ -65,7 +85,7 @@ const Example = () => {
           justifyContent: 'space-between',
           flexGrow: '1',
           background: 'transparent',
-          border: '2px solid black',
+          border: '1px solid #eaeaea',
           borderRadius: '0.8rem',
           boxShadow: 'none',
         },
@@ -73,7 +93,7 @@ const Example = () => {
       muiTableContainerProps={{
         sx: {
           borderRadius: '0.8rem',
-          flexGrow: '1',
+
           background: 'transparent',
         },
       }}
