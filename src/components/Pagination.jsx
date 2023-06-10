@@ -15,13 +15,13 @@ export default function Pagination() {
         </div>
       </div>
       <div className="pagination-pages">
-        <FaChevronLeft size={16} className="chevron-left disabled" />
+        <FaChevronLeft size={14} className="chevron-left disabled" />
         <div className="pagination-page-info">
           <input type="number" name="" id="" min={1} />
           <p className="disabled">of</p>
           <p className="last-page">4</p>
         </div>
-        <FaChevronRight size={16} className="chevron-right" />
+        <FaChevronRight size={14} className="chevron-right" />
       </div>
     </div>
   );

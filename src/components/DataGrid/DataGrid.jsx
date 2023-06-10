@@ -92,7 +92,7 @@ const Example = () => {
   const columns = useMemo(
     () => [
       {
-        accessorKey: 'link', //access nested data with dot notation
+        accessorKey: 'link',
         header: 'Sosyal Medya Linki',
       },
       {
@@ -100,7 +100,7 @@ const Example = () => {
         header: 'Sosyal Medya Adı',
       },
       {
-        accessorKey: 'description', //normal accessorKey
+        accessorKey: 'description',
         header: 'Açıklama',
         enableSorting: false,
       },

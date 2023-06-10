@@ -2,7 +2,7 @@
 import Navbar from './components/Navbar';
 import SearchFilter from './components/SearchFilter';
 import NewEntry from './components/NewEntry';
-import DataGrid from './components/DataGrid';
+import DataGrid from './components/DataGrid/DataGrid';
 import Pagination from './components/Pagination';
 
 function App() {
