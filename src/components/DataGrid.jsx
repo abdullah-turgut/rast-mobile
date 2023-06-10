@@ -68,6 +68,21 @@ const data = [
     name: 'twitter',
     description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
   },
+  {
+    link: 'twitter.com/rastmobile',
+    name: 'twitter',
+    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
+  },
+  {
+    link: 'twitter.com/rastmobile',
+    name: 'twitter',
+    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
+  },
+  {
+    link: 'twitter.com/rastmobile',
+    name: 'twitter',
+    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
+  },
 ];
 
 const Example = () => {
@@ -107,6 +122,7 @@ const Example = () => {
         sx: {
           display: 'flex',
           flexDirection: 'column',
+          justifyContent: 'space-between',
           flexGrow: '1',
           background: 'transparent',
           borderRadius: '0.8rem',
@@ -118,8 +134,9 @@ const Example = () => {
           borderRadius: '0.8rem',
           border: '1px solid #eaeaea',
           background: 'transparent',
-          minHeight: '65rem',
-          maxHeight: '65rem',
+          flexGrow: '1',
+          maxHeight: '66rem',
+          overflowY: 'auto',
         },
       }}
       muiTableHeadCellProps={{
@@ -155,11 +172,9 @@ const Example = () => {
         },
       }}
       muiTablePaginationProps={{
+        rowsPerPageOptions: [9, 18],
         showFirstButton: false,
         showLastButton: false,
-        sx: {
-          fontSize: '2rem',
-        },
       }}
     />
   );

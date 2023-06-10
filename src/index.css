@@ -175,7 +175,7 @@ main {
   row-gap: 1rem;
 
   /*box-model*/
-  min-height: calc(100vh - 10rem);
+  max-height: calc(100vh - 10rem);
   padding: 4.4rem 4% 3rem 4%;
   border-radius: 0.6rem;
 
