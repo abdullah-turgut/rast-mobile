@@ -180,7 +180,7 @@ main {
 
   /*box-model*/
   max-height: calc(100vh - 10rem);
-  padding: 4.4rem 4% 3rem 4%;
+  padding: 2rem 4% 3rem 4%;
   border-radius: 0.6rem;
 
   /*background*/
@@ -311,6 +311,7 @@ main {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  column-gap: 1.5rem;
 }
 
 .MuiButtonBase-root .MuiTableSortLabel-icon {
@@ -503,6 +504,10 @@ main {
 
   .search-bar {
     max-width: 44rem;
+  }
+
+  main {
+    padding-top: 4.4rem;
   }
 
   .MuiTableRow-head th:nth-child(1) {
