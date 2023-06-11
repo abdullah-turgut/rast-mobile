@@ -54,6 +54,17 @@ export default function Pagination({
       setPages((preVal) => preVal - 1);
     }
   }
+
+  function handlePageChange(e) {
+    const { value } = e.target;
+    if (value > Math.ceil(gridData.length / rows)) {
+      setPages(Math.ceil(gridData.length / rows));
+    } else if (value < 1) {
+      setPages(1);
+    } else {
+      setPages(value);
+    }
+  }
   return (
     <div className="pagination">
       <div className="pagination-rows">
@@ -85,9 +96,9 @@ export default function Pagination({
             type="number"
             name=""
             id="current-page-input"
-            readOnly
             min={1}
             value={pages}
+            onChange={(e) => handlePageChange(e)}
           />
           <p className="disabled">of</p>
           <p className="last-page">{Math.ceil(gridData.length / rows)}</p>
