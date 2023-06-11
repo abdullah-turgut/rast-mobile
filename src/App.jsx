@@ -43,6 +43,7 @@ function App() {
           <SearchFilter
             setFilteredData={setFilteredData}
             setGridData={setGridData}
+            rawData={rawData}
             setRows={setRows}
             setPages={setPages}
           />

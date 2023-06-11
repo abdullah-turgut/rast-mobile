@@ -20,29 +20,29 @@ const data = [
     description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
   },
   {
+    link: 'instagram.com/mobilerast/',
+    name: '5instagram',
+    description: `We'll help you to finish your development project successfully.`,
+  },
+  {
     link: 'tr.linkedin.com/company/rastmobile/',
-    name: '5linkedin',
+    name: '6linkedin',
     description: `Hire vetted developers from Rast Mobile to scale up your tech projects.`,
   },
   {
     link: 'behance.net/rastmobile',
-    name: '6behance',
+    name: '7behance',
     description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
   },
   {
     link: 'twitter.com/rastmobile',
-    name: '7twitter',
+    name: '8twitter',
     description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
   },
   {
-    link: 'tr.linkedin.com/company/rastmobile/',
-    name: '8linkedin',
-    description: `Hire vetted developers from Rast Mobile to scale up your tech projects.`,
-  },
-  {
-    link: 'tr.linkedin.com/company/rastmobile/',
-    name: '9linkedin',
-    description: `Hire vetted developers from Rast Mobile to scale up your tech projects.`,
+    link: 'twitter.com/rastmobile',
+    name: '9twitter',
+    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
   },
 ];
 
