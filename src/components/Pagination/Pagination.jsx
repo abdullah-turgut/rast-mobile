@@ -1,3 +1,5 @@
+//Styles
+import './pagination.css';
 //Hooks
 import { useEffect } from 'react';
 //Icons
