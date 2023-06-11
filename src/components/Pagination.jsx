@@ -1,18 +1,19 @@
+//Hooks
+import { useEffect } from 'react';
 //Icons
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { AiOutlineCaretUp, AiOutlineCaretDown } from 'react-icons/ai';
 
-import { useEffect } from 'react';
 export default function Pagination({
   rows,
   setRows,
   pages,
   setPages,
+  data,
   gridData,
   setGridData,
 }) {
   useEffect(() => {
-    setPages(Math.ceil(gridData.length / rows));
     document.querySelector('#current-page-input').value = 1;
     const currentPage = document.getElementById('current-page-input');
     if (Number(currentPage.value) == 1) {
@@ -30,47 +31,27 @@ export default function Pagination({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rows]);
 
+  console.log(gridData);
+
   function handleIncrement() {
     setRows((preVal) => preVal + 1);
+    setPages(1);
   }
   function handleDecrement() {
     if (rows > 1) {
       setRows((preVal) => preVal - 1);
+      setPages(1);
     }
   }
 
   function handleNextPage() {
-    const currentPage = document.getElementById('current-page-input');
-    if (Number(currentPage.value) < pages) {
-      currentPage.value = Number(currentPage.value) + 1;
-    }
-    if (Number(currentPage.value) == 1) {
-      document.getElementById('chevron-left').classList.add('disabled');
-    } else if (
-      Number(currentPage.value) < pages &&
-      Number(currentPage.value) > 1
-    ) {
-      document.getElementById('chevron-left').classList.remove('disabled');
-      document.getElementById('chevron-right').classList.remove('disabled');
-    } else if (Number(currentPage.value) === pages) {
-      document.getElementById('chevron-right').classList.add('disabled');
+    if (pages < Math.ceil(gridData.length / rows)) {
+      setPages((preVal) => preVal + 1);
     }
   }
   function handlePreviosPage() {
-    const currentPage = document.getElementById('current-page-input');
-    if (Number(currentPage.value) > 1) {
-      currentPage.value = Number(currentPage.value) - 1;
-    }
-    if (Number(currentPage.value) == 1) {
-      document.getElementById('chevron-left').classList.add('disabled');
-    } else if (
-      Number(currentPage.value) < pages &&
-      Number(currentPage.value) > 1
-    ) {
-      document.getElementById('chevron-left').classList.remove('disabled');
-      document.getElementById('chevron-right').classList.remove('disabled');
-    } else if (Number(currentPage.value) === pages) {
-      document.getElementById('chevron-right').classList.add('disabled');
+    if (pages > 1) {
+      setPages((preVal) => preVal - 1);
     }
   }
   return (
@@ -95,7 +76,7 @@ export default function Pagination({
       <div className="pagination-pages">
         <FaChevronLeft
           size={14}
-          className="chevron-left disabled"
+          className={pages === 1 ? 'chevron-left disabled' : 'chevron-left'}
           id="chevron-left"
           onClick={handlePreviosPage}
         />
@@ -104,15 +85,20 @@ export default function Pagination({
             type="number"
             name=""
             id="current-page-input"
+            readOnly
             min={1}
-            defaultValue={1}
+            value={pages}
           />
           <p className="disabled">of</p>
-          <p className="last-page">{pages}</p>
+          <p className="last-page">{Math.ceil(gridData.length / rows)}</p>
         </div>
         <FaChevronRight
           size={14}
-          className="chevron-right"
+          className={
+            pages === Math.ceil(gridData.length / rows)
+              ? 'chevron-right disabled'
+              : 'chevron-right'
+          }
           id="chevron-right"
           onClick={(e) => handleNextPage(e)}
         />
