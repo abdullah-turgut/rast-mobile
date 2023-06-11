@@ -8,6 +8,7 @@ import data from './mocks/data';
 import Navbar from './components/Navbar';
 import SearchFilter from './components/SearchFilter';
 import NewEntry from './components/NewEntry';
+import NewEntryModal from './components/NewEntryModal';
 import DataGrid from './components/DataGrid/DataGrid';
 import Pagination from './components/Pagination';
 
@@ -42,6 +43,7 @@ function App() {
           pages={pages}
           setPages={setPages}
         />
+        <NewEntryModal />
       </main>
     </>
   );
