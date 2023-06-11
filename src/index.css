@@ -47,8 +47,6 @@ input:focus {
   outline: none;
 }
 
-/* NAVIGATION */
-
 /* MAIN */
 
 main {
@@ -69,12 +67,6 @@ main {
     rgba(232, 236, 255, 0) 135.85%
   );
 }
-
-/* DATA GRID */
-
-/* PAGINATION */
-
-/* FORM MODAL */
 
 /* MEDIA QUERIES */
 

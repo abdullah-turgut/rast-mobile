@@ -116,7 +116,7 @@
   border-radius: 0.5rem;
 
   /*styles*/
-  color: #ffffff;
+  color: #ffffff !important;
   background-color: #744bfc;
 }
 
