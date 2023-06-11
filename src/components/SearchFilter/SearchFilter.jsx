@@ -1,3 +1,5 @@
+//Styles
+import './searchfilter.css';
 //Icons
 import { HiFilter } from 'react-icons/hi';
 import { RiSearchLine } from 'react-icons/ri';
