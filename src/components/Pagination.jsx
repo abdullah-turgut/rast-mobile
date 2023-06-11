@@ -1,16 +1,31 @@
 //Icons
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { AiOutlineCaretUp, AiOutlineCaretDown } from 'react-icons/ai';
-export default function Pagination() {
+export default function Pagination({ rows, setRows }) {
+  function handleIncrement() {
+    setRows((preVal) => preVal + 1);
+  }
+  function handleDecrement() {
+    if (rows > 1) {
+      setRows((preVal) => preVal - 1);
+    }
+  }
   return (
     <div className="pagination">
       <div className="pagination-rows">
         <p>Show:</p>
         <div className="row-count">
-          <input type="text" name="" id="row-input" min={1} />
+          <input
+            type="text"
+            name=""
+            id="row-input"
+            readOnly
+            min={1}
+            value={`${rows} rows`}
+          />
           <div className="up-down">
-            <AiOutlineCaretUp size={12} />
-            <AiOutlineCaretDown size={12} />
+            <AiOutlineCaretUp size={12} onClick={handleIncrement} />
+            <AiOutlineCaretDown size={12} onClick={handleDecrement} />
           </div>
         </div>
       </div>
