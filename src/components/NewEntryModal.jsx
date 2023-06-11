@@ -13,7 +13,7 @@ export default function NewEntryModal() {
     <div className="modal">
       <div className="modal-overlay"></div>
       <form onSubmit={handleSubmit(onSubmit)} className="modal-form">
-        <div>
+        <div className="form-inputs">
           <label>Sosyal Medya Linki</label>
           <input
             type="text"
@@ -27,7 +27,7 @@ export default function NewEntryModal() {
           />
           {errors.link && <p>{errors.link.message}</p>}
         </div>
-        <div>
+        <div className="form-inputs">
           <label>Sosyal Medya Adı</label>
           <input
             type="text"
@@ -37,7 +37,7 @@ export default function NewEntryModal() {
           />
           {errors.name && <p>{errors.name.message}</p>}
         </div>
-        <div>
+        <div className="form-inputs">
           <label>Açıklama</label>
           <input
             type="text"
