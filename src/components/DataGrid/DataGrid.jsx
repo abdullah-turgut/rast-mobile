@@ -1,8 +1,6 @@
 import { useMemo } from 'react';
 import { MaterialReactTable } from 'material-react-table';
 
-//nested data is ok, see accessorKeys in ColumnDef below
-
 const DataGrid = ({ gridData }) => {
   //should be memoized or stable
   const columns = useMemo(

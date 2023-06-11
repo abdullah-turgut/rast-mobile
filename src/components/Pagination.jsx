@@ -10,28 +10,26 @@ export default function Pagination({
   pages,
   setPages,
   data,
-  gridData,
+  filteredData,
   setGridData,
 }) {
   useEffect(() => {
-    document.querySelector('#current-page-input').value = 1;
-    const currentPage = document.getElementById('current-page-input');
-    if (Number(currentPage.value) == 1) {
-      document.getElementById('chevron-left').classList.add('disabled');
-    } else if (
-      Number(currentPage.value) < pages &&
-      Number(currentPage.value) > 1
-    ) {
-      document.getElementById('chevron-left').classList.remove('disabled');
-      document.getElementById('chevron-right').classList.remove('disabled');
-    } else if (Number(currentPage.value) === pages) {
-      document.getElementById('chevron-right').classList.add('disabled');
-    }
+    setPages(1);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rows]);
 
-  console.log(gridData);
+  useEffect(() => {
+    updateData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [rows, pages]);
+
+  function updateData() {
+    const startIndex = (pages - 1) * rows;
+    const endIndex = startIndex + rows;
+    const currentPageData = data.slice(startIndex, endIndex);
+    setGridData(currentPageData);
+  }
 
   function handleIncrement() {
     setRows((preVal) => preVal + 1);
@@ -45,26 +43,30 @@ export default function Pagination({
   }
 
   function handleNextPage() {
-    if (pages < Math.ceil(gridData.length / rows)) {
+    if (pages < Math.ceil(data.length / rows)) {
       setPages((preVal) => preVal + 1);
+      setGridData([...filteredData.filter((entry, i) => i < 5)]);
     }
   }
-  function handlePreviosPage() {
+  function handlePreviousPage() {
     if (pages > 1) {
       setPages((preVal) => preVal - 1);
+      setGridData([...filteredData.filter((entry, i) => i < 5)]);
     }
   }
 
   function handlePageChange(e) {
     const { value } = e.target;
-    if (value > Math.ceil(gridData.length / rows)) {
-      setPages(Math.ceil(gridData.length / rows));
+    if (value > Math.ceil(filteredData.length / rows)) {
+      setPages(Math.ceil(filteredData.length / rows));
     } else if (value < 1) {
       setPages(1);
     } else {
       setPages(value);
     }
+    setGridData([...filteredData.filter((entry, i) => i < 5)]);
   }
+
   return (
     <div className="pagination">
       <div className="pagination-rows">
@@ -89,7 +91,7 @@ export default function Pagination({
           size={14}
           className={pages === 1 ? 'chevron-left disabled' : 'chevron-left'}
           id="chevron-left"
-          onClick={handlePreviosPage}
+          onClick={handlePreviousPage}
         />
         <div className="pagination-page-info">
           <input
@@ -101,12 +103,12 @@ export default function Pagination({
             onChange={(e) => handlePageChange(e)}
           />
           <p className="disabled">of</p>
-          <p className="last-page">{Math.ceil(gridData.length / rows)}</p>
+          <p className="last-page">{Math.ceil(filteredData.length / rows)}</p>
         </div>
         <FaChevronRight
           size={14}
           className={
-            pages === Math.ceil(gridData.length / rows)
+            pages === Math.ceil(filteredData.length / rows)
               ? 'chevron-right disabled'
               : 'chevron-right'
           }

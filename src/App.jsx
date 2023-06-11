@@ -12,9 +12,10 @@ import DataGrid from './components/DataGrid/DataGrid';
 import Pagination from './components/Pagination';
 
 function App() {
-  const [gridData, setGridData] = useState(data);
-  const [rows, setRows] = useState(9);
-  const [pages, setPages] = useState(1);
+  const [gridData, setGridData] = useState(data); //initial data
+  const [filteredData, setFilteredData] = useState(data); //data filtered on changes in search input
+  const [rows, setRows] = useState(9); //number of rows to show per page
+  const [pages, setPages] = useState(1); //current page
 
   return (
     <>
@@ -24,8 +25,9 @@ function App() {
       <main>
         <div className="search-add">
           <SearchFilter
+            setFilteredData={setFilteredData}
             setGridData={setGridData}
-            rows={rows}
+            setRows={setRows}
             setPages={setPages}
           />
           <NewEntry />
@@ -33,7 +35,7 @@ function App() {
         <DataGrid gridData={gridData} />
         <Pagination
           data={data}
-          gridData={gridData}
+          filteredData={filteredData}
           setGridData={setGridData}
           rows={rows}
           setRows={setRows}
