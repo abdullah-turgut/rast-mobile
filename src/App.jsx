@@ -13,14 +13,10 @@ import Pagination from './components/Pagination';
 
 function App() {
   const [gridData, setGridData] = useState(data);
-  const [rows, setRows] = useState(9);
-  const [pages, setPages] = useState(
-    gridData.length % rows === 0
-      ? gridData.length % rows
-      : (gridData.length % rows) + 1
-  );
+  const [rows, setRows] = useState(3);
+  const [pages, setPages] = useState(Math.ceil(gridData.length / rows));
 
-  console.log(pages);
+  console.log(rows, pages);
 
   return (
     <>
@@ -33,7 +29,14 @@ function App() {
           <NewEntry />
         </div>
         <DataGrid gridData={gridData} />
-        <Pagination rows={rows} setRows={setRows} />
+        <Pagination
+          gridData={gridData}
+          setGridData={setGridData}
+          rows={rows}
+          setRows={setRows}
+          pages={pages}
+          setPages={setPages}
+        />
       </main>
     </>
   );

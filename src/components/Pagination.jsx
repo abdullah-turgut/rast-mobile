@@ -1,13 +1,27 @@
 //Icons
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { AiOutlineCaretUp, AiOutlineCaretDown } from 'react-icons/ai';
-export default function Pagination({ rows, setRows }) {
+export default function Pagination({
+  rows,
+  setRows,
+  pages,
+  setPages,
+  gridData,
+  setGridData,
+}) {
+  console.log(rows, pages);
   function handleIncrement() {
     setRows((preVal) => preVal + 1);
   }
   function handleDecrement() {
     if (rows > 1) {
       setRows((preVal) => preVal - 1);
+    }
+  }
+  function handleNextPage() {
+    const currentPage = document.getElementById('current-page-input');
+    if (Number(currentPage.value) < pages) {
+      currentPage.value = Number(currentPage.value) + 1;
     }
   }
   return (
@@ -32,11 +46,22 @@ export default function Pagination({ rows, setRows }) {
       <div className="pagination-pages">
         <FaChevronLeft size={14} className="chevron-left disabled" />
         <div className="pagination-page-info">
-          <input type="number" name="" id="" min={1} />
+          <input
+            type="number"
+            name=""
+            id="current-page-input"
+            min={1}
+            max={2}
+            defaultValue={1}
+          />
           <p className="disabled">of</p>
-          <p className="last-page">4</p>
+          <p className="last-page">{pages}</p>
         </div>
-        <FaChevronRight size={14} className="chevron-right" />
+        <FaChevronRight
+          size={14}
+          className="chevron-right"
+          onClick={(e) => handleNextPage(e)}
+        />
       </div>
     </div>
   );
