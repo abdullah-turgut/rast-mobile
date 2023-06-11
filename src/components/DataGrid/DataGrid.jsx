@@ -173,11 +173,6 @@ const Example = () => {
           display: 'flex',
         },
       }}
-      // muiTablePaginationProps={{
-      //   rowsPerPageOptions: [9, 18],
-      //   showFirstButton: false,
-      //   showLastButton: false,
-      // }}
     />
   );
 };
