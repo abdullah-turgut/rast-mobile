@@ -1,13 +1,12 @@
+//Styles
+import './navbar.css';
 //Hooks
 import { useState } from 'react';
-
 //Brand-Logo
 import logo from '../../assets/logo.png';
-
 //React-Icons
 import { HiMenuAlt4 } from 'react-icons/hi';
 import { IoMdClose } from 'react-icons/io';
-
 //Social-Icons
 import { BsYoutube, BsInstagram, BsBehance, BsLinkedin } from 'react-icons/bs';
 export default function Navbar() {
