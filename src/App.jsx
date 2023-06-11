@@ -1,6 +1,9 @@
 //Hooks
 import { useState } from 'react';
 
+//Mock Data
+import data from './mocks/data';
+
 //Components
 import Navbar from './components/Navbar';
 import SearchFilter from './components/SearchFilter';
@@ -9,8 +12,10 @@ import DataGrid from './components/DataGrid/DataGrid';
 import Pagination from './components/Pagination';
 
 function App() {
-  const [keyword, setKeyword] = useState(''); //handle search input
-  console.log(keyword);
+  const [gridData, setGridData] = useState(data);
+
+  console.log(gridData);
+
   return (
     <>
       <header>
@@ -18,10 +23,10 @@ function App() {
       </header>
       <main>
         <div className="search-add">
-          <SearchFilter setKeyword={setKeyword} />
+          <SearchFilter setGridData={setGridData} />
           <NewEntry />
         </div>
-        <DataGrid />
+        <DataGrid gridData={gridData} />
         <Pagination />
       </main>
     </>

@@ -2,92 +2,8 @@ import { useMemo } from 'react';
 import { MaterialReactTable } from 'material-react-table';
 
 //nested data is ok, see accessorKeys in ColumnDef below
-const data = [
-  {
-    link: (
-      <a href="https://instagram.com/mobilerast/">instagram.com/mobilerast/</a>
-    ),
-    name: 'instagram',
-    description: `We'll help you to finish your development project successfully.`,
-  },
-  {
-    link: 'tr.linkedin.com/company/rastmobile',
-    name: 'linkedin',
-    description: `Hire vetted developers from Rast Mobile to scale up your tech projects.`,
-  },
-  {
-    link: 'behance.net/rastmobile',
-    name: 'behance',
-    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
-  },
-  {
-    link: 'twitter.com/rastmobile',
-    name: 'twitter',
-    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
-  },
-  {
-    link: 'twitter.com/rastmobile',
-    name: 'twitter',
-    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
-  },
-  {
-    link: 'twitter.com/rastmobile',
-    name: 'twitter',
-    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
-  },
-  {
-    link: 'twitter.com/rastmobile',
-    name: 'twitter',
-    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
-  },
-  {
-    link: 'twitter.com/rastmobile',
-    name: 'twitter',
-    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
-  },
-  {
-    link: 'twitter.com/rastmobile',
-    name: 'twitter',
-    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
-  },
-  {
-    link: 'twitter.com/rastmobile',
-    name: 'twitter',
-    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
-  },
-  {
-    link: 'twitter.com/rastmobile',
-    name: 'twitter',
-    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
-  },
-  {
-    link: 'twitter.com/rastmobile',
-    name: 'twitter',
-    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
-  },
-  {
-    link: 'twitter.com/rastmobile',
-    name: 'twitter',
-    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
-  },
-  {
-    link: 'twitter.com/rastmobile',
-    name: 'twitter',
-    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
-  },
-  {
-    link: 'twitter.com/rastmobile',
-    name: 'twitter',
-    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
-  },
-  {
-    link: 'twitter.com/rastmobile',
-    name: 'twitter',
-    description: `Software Development Agency Rast Mobile Information Technology Ltd.`,
-  },
-];
 
-const Example = () => {
+const DataGrid = ({ gridData }) => {
   //should be memoized or stable
   const columns = useMemo(
     () => [
@@ -111,7 +27,7 @@ const Example = () => {
   return (
     <MaterialReactTable
       columns={columns}
-      data={data}
+      data={gridData}
       enableColumnActions={false}
       enableColumnFilters={false}
       enablePagination={true}
@@ -177,4 +93,4 @@ const Example = () => {
   );
 };
 
-export default Example;
+export default DataGrid;
