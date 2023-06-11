@@ -9,9 +9,10 @@ export default function Pagination({
   setRows,
   pages,
   setPages,
-  data,
+  rawData,
   filteredData,
   setGridData,
+  updateData,
 }) {
   useEffect(() => {
     setPages(1);
@@ -20,14 +21,14 @@ export default function Pagination({
   }, [rows]);
 
   useEffect(() => {
-    updateData();
+    updateGridData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [rows, pages]);
+  }, [rows, pages, updateData]);
 
-  function updateData() {
+  function updateGridData() {
     const startIndex = (pages - 1) * rows;
     const endIndex = startIndex + rows;
-    const currentPageData = data.slice(startIndex, endIndex);
+    const currentPageData = rawData.slice(startIndex, endIndex);
     setGridData(currentPageData);
   }
 
@@ -43,15 +44,13 @@ export default function Pagination({
   }
 
   function handleNextPage() {
-    if (pages < Math.ceil(data.length / rows)) {
+    if (pages < Math.ceil(rawData.length / rows)) {
       setPages((preVal) => preVal + 1);
-      setGridData([...filteredData.filter((entry, i) => i < 5)]);
     }
   }
   function handlePreviousPage() {
     if (pages > 1) {
       setPages((preVal) => preVal - 1);
-      setGridData([...filteredData.filter((entry, i) => i < 5)]);
     }
   }
 

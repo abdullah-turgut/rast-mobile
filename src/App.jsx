@@ -1,5 +1,5 @@
 //Hooks
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 //Mock Data
 import data from './mocks/data';
@@ -13,10 +13,25 @@ import DataGrid from './components/DataGrid/DataGrid';
 import Pagination from './components/Pagination';
 
 function App() {
-  const [gridData, setGridData] = useState(data); //initial data
-  const [filteredData, setFilteredData] = useState(data); //data filtered on changes in search input
+  const [rawData, setRawData] = useState([]);
+  const [gridData, setGridData] = useState([]); //grid data displayed per page
+  const [filteredData, setFilteredData] = useState([]); //data filtered on changes in search input
+  const [updateData, setUpdateData] = useState(0); //to control data update after new entry
   const [rows, setRows] = useState(9); //number of rows to show per page
   const [pages, setPages] = useState(1); //current page
+
+  useEffect(() => {
+    const localData = JSON.parse(localStorage.getItem('localData'));
+    if (localData) {
+      setRawData(localData);
+      setGridData(localData);
+      setFilteredData(localData);
+    } else {
+      setRawData(data);
+      setGridData(data);
+      setFilteredData(data);
+    }
+  }, [updateData]);
 
   return (
     <>
@@ -35,15 +50,17 @@ function App() {
         </div>
         <DataGrid gridData={gridData} />
         <Pagination
-          data={data}
+          gridData={gridData}
           filteredData={filteredData}
           setGridData={setGridData}
           rows={rows}
+          rawData={rawData}
           setRows={setRows}
           pages={pages}
           setPages={setPages}
+          updateData={updateData}
         />
-        <NewEntryModal />
+        <NewEntryModal setRawData={setRawData} setUpdateData={setUpdateData} />
       </main>
     </>
   );
