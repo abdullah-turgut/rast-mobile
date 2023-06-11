@@ -14,12 +14,13 @@ export default function Pagination({
   setGridData,
   updateData,
 }) {
+  //on every change of rows, it resets current page to 1
   useEffect(() => {
     setPages(1);
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rows]);
 
+  //on every change of rows, pages and when new entry saved, it updates data per page
   useEffect(() => {
     updateGridData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -32,10 +33,13 @@ export default function Pagination({
     setGridData(currentPageData);
   }
 
+  //when rows increased, it increases row state and resets pages to 1
   function handleIncrement() {
     setRows((preVal) => preVal + 1);
     setPages(1);
   }
+
+  //when rows decreased, it decreases row state and resets pages to 1. it doesnt work if row is equal to 1
   function handleDecrement() {
     if (rows > 1) {
       setRows((preVal) => preVal - 1);
@@ -43,17 +47,21 @@ export default function Pagination({
     }
   }
 
+  //goes to next page on data table
   function handleNextPage() {
     if (pages < Math.ceil(rawData.length / rows)) {
       setPages((preVal) => preVal + 1);
     }
   }
+
+  //goes to previos page on data table
   function handlePreviousPage() {
     if (pages > 1) {
       setPages((preVal) => preVal - 1);
     }
   }
 
+  //it limits the min and max values of current page input
   function handlePageChange(e) {
     const { value } = e.target;
     if (value > Math.ceil(filteredData.length / rows)) {
@@ -63,7 +71,6 @@ export default function Pagination({
     } else {
       setPages(value);
     }
-    setGridData([...filteredData.filter((entry, i) => i < 5)]);
   }
 
   return (

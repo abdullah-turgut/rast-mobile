@@ -31,7 +31,7 @@ export default function Navbar() {
         <img src={logo} alt="rast-mobile-logo" className="logo" />
       </a>
 
-      {/* When menu toggled on overlay on the left side */}
+      {/* When menu toggled on, overlay on the left side */}
       <div className="navbar-overlay" id="nav-overlay"></div>
 
       <HiMenuAlt4 size={40} className="burger-menu" onClick={toggleMenu} />

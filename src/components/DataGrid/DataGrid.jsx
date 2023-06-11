@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { MaterialReactTable } from 'material-react-table';
 
 const DataGrid = ({ gridData }) => {
-  //should be memoized or stable
+  //columns are used for to create head cells of the table
   const columns = useMemo(
     () => [
       {
@@ -16,7 +16,7 @@ const DataGrid = ({ gridData }) => {
       {
         accessorKey: 'description',
         header: 'Açıklama',
-        enableSorting: false,
+        enableSorting: false, //disables sorting for description column
       },
     ],
     []
@@ -34,6 +34,7 @@ const DataGrid = ({ gridData }) => {
       enableTopToolbar={false}
       muiTableBodyRowProps={{ hover: false }}
       enableStickyHeader
+      //all below are for styling table (some other stylings included in css file)
       muiTablePaperProps={{
         sx: {
           display: 'flex',
