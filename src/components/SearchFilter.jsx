@@ -5,7 +5,7 @@ import data from '../mocks/data';
 import { HiFilter } from 'react-icons/hi';
 import { RiSearchLine } from 'react-icons/ri';
 
-export default function SearchInput({ setGridData }) {
+export default function SearchInput({ setGridData, rows, setPages }) {
   function handleSearch(e) {
     e.preventDefault();
     const { value } = e.target;
@@ -16,6 +16,7 @@ export default function SearchInput({ setGridData }) {
         entry.description.toLowerCase().includes(value.toLowerCase())
     );
     setGridData(filteredData);
+    setPages(Math.ceil(filteredData.length / rows));
   }
   return (
     <div className="search-bar">

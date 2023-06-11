@@ -25,7 +25,11 @@ function App() {
       </header>
       <main>
         <div className="search-add">
-          <SearchFilter setGridData={setGridData} />
+          <SearchFilter
+            setGridData={setGridData}
+            rows={rows}
+            setPages={setPages}
+          />
           <NewEntry />
         </div>
         <DataGrid gridData={gridData} />
