@@ -1,3 +1,6 @@
+//Styles
+import './newentry.css';
+//Icons
 import { HiPlus } from 'react-icons/hi';
 
 export default function NewEntry() {

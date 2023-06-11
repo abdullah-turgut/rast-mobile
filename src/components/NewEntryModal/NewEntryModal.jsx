@@ -1,3 +1,5 @@
+//Styles
+import './newentrymodal.css';
 //Hooks
 import { useForm } from 'react-hook-form';
 //Icons
