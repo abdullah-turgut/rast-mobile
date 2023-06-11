@@ -5,12 +5,12 @@ import { useEffect, useState } from 'react';
 import data from './mocks/data';
 
 //Components
-import Navbar from './components/Navbar';
-import SearchFilter from './components/SearchFilter';
-import NewEntry from './components/NewEntry';
-import NewEntryModal from './components/NewEntryModal';
+import Navbar from './components/Navbar/Navbar';
+import SearchFilter from './components/SearchFilter/SearchFilter';
+import NewEntry from './components/NewEntry/NewEntry';
+import NewEntryModal from './components/NewEntryModal/NewEntryModal';
 import DataGrid from './components/DataGrid/DataGrid';
-import Pagination from './components/Pagination';
+import Pagination from './components/Pagination/Pagination';
 
 function App() {
   const [rawData, setRawData] = useState([]);

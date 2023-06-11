@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 //Brand-Logo
-import logo from '../assets/logo.png';
+import logo from '../../assets/logo.png';
 
 //React-Icons
 import { HiMenuAlt4 } from 'react-icons/hi';

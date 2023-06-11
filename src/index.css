@@ -304,58 +304,6 @@ main {
   filter: brightness(1.1);
 }
 
-.MuiTableRow-head th:nth-child(1) {
-  padding-left: 2rem;
-  width: 31.4%;
-  border-right: 1px solid #c4cee5;
-}
-
-.MuiTableRow-head th:nth-child(2) {
-  border-right: 1px solid #c4cee5;
-  width: 27.3%;
-}
-
-.MuiTableRow-head th:nth-child(3) {
-  width: 41.2%;
-}
-
-.Mui-TableHeadCell-Content-Labels {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  column-gap: 1.5rem;
-}
-
-.MuiButtonBase-root .MuiTableSortLabel-icon {
-  color: #744bfc !important;
-  opacity: 0.4 !important;
-}
-
-.MuiButtonBase-root.Mui-active .MuiTableSortLabel-icon {
-  color: #744bfc !important;
-  opacity: 1 !important;
-}
-
-.MuiTableRow-root:hover {
-  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.11);
-}
-
-.MuiTableRow-root:nth-child(even) {
-  background-color: transparent;
-}
-
-.MuiTableRow-root td {
-  padding: 1rem 2rem;
-}
-
-.MuiTableRow-root td:nth-child(1) {
-  border-right: 1px solid #c4cee5;
-}
-
-.MuiTableRow-root td:nth-child(2) {
-  border-right: 1px solid #c4cee5;
-}
-
 /* PAGINATION */
 
 .pagination {

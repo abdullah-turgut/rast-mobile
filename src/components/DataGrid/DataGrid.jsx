@@ -1,4 +1,8 @@
+//styles
+import './datagrid.css';
+//hooks
 import { useMemo } from 'react';
+//library
 import { MaterialReactTable } from 'material-react-table';
 
 const DataGrid = ({ gridData }) => {
