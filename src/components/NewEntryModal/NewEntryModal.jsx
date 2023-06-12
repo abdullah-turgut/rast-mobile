@@ -4,6 +4,9 @@ import './newentrymodal.css';
 import { useForm } from 'react-hook-form';
 //Icons
 import { MdClose } from 'react-icons/md';
+
+//Libraries
+import { nanoid } from 'nanoid';
 export default function NewEntryModal({ setRawData, setUpdateData }) {
   const {
     register,
@@ -18,10 +21,15 @@ export default function NewEntryModal({ setRawData, setUpdateData }) {
 
     if (localData !== null) {
       //check if data exist, otherwise create new key
-
-      localStorage.setItem('localData', JSON.stringify([...localData, data]));
+      localStorage.setItem(
+        'localData',
+        JSON.stringify([...localData, { ...data, id: nanoid() }])
+      );
     } else {
-      localStorage.setItem('localData', JSON.stringify([data]));
+      localStorage.setItem(
+        'localData',
+        JSON.stringify([{ ...data, id: nanoid() }])
+      );
     }
 
     //to reset form inputs after save
