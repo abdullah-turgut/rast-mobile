@@ -120,6 +120,10 @@
   background-color: #744bfc;
 }
 
+.nav-social-links:hover {
+  cursor: pointer;
+}
+
 @media screen and (min-width: 1024px) {
   .navbar {
     padding: 3rem 6%;
