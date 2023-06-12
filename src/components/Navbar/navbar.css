@@ -106,7 +106,8 @@
   column-gap: 1.5rem;
 }
 
-.nav-social-links a {
+.nav-social-links li {
+  /*display*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,8 +116,7 @@
   padding: 0.5rem;
   border-radius: 0.5rem;
 
-  /*styles*/
-  color: #ffffff !important;
+  color: #ffffff;
   background-color: #744bfc;
 }
 

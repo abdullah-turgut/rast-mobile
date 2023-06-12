@@ -55,24 +55,16 @@ export default function Navbar() {
         {/* Social Links */}
         <ul className="nav-social-links">
           <li>
-            <a href="">
-              <BsYoutube size={20} />
-            </a>
+            <BsYoutube size={20} />
           </li>
           <li>
-            <a href="">
-              <BsInstagram size={20} />
-            </a>
+            <BsInstagram size={20} />
           </li>
           <li>
-            <a href="">
-              <BsBehance size={20} />
-            </a>
+            <BsBehance size={20} />
           </li>
           <li>
-            <a href="">
-              <BsLinkedin size={20} />
-            </a>
+            <BsLinkedin size={20} />
           </li>
         </ul>
       </div>

@@ -68,82 +68,13 @@ main {
   );
 }
 
-/* MEDIA QUERIES */
-
 /* laptops/desktops */
 @media screen and (min-width: 1024px) {
   body {
     padding-top: 10rem;
   }
 
-  .navbar {
-    padding: 3rem 6%;
-  }
-
-  .burger-menu {
-    display: none;
-  }
-
-  .close-menu {
-    display: none;
-  }
-
-  .navbar-overlay {
-    position: static;
-    display: none;
-    width: 0;
-    height: 0;
-  }
-
-  .nav-links {
-    /*position*/
-    position: static;
-
-    /*display*/
-    flex-direction: row;
-    flex-grow: 1;
-    justify-content: space-between;
-    align-items: center;
-
-    /*box-model*/
-    width: auto;
-    height: auto;
-    padding: 0;
-  }
-
-  .nav-route-links {
-    /*display*/
-    flex-direction: row;
-    flex-grow: 1;
-    justify-content: space-evenly;
-
-    /*typography*/
-    font-size: 1.4rem;
-  }
-
-  .search-add {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .search-bar {
-    max-width: 44rem;
-  }
-
   main {
     padding-top: 4.4rem;
-  }
-
-  .MuiTableRow-head th:nth-child(1) {
-    padding-left: 5rem;
-  }
-
-  .MuiTableRow-root td:nth-child(1) {
-    padding: 3rem 2rem 2rem 5rem;
-  }
-
-  .modal-form {
-    width: 30%;
-    min-width: 40rem;
   }
 }
